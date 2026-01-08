@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+       "lib": [
+          "ES6"
+       ],
+       "target": "ES6",
+       "module": "CommonJS",
+       "moduleResolution": "node",
+       "outDir": "./build",
+       "emitDecoratorMetadata": true,
+       "experimentalDecorators": true,
+       "sourceMap": true,
+       "esModuleInterop": true,
+       "skipLibCheck": true,
+       "noImplicitAny": false,
+       "strict": false,
+       "baseUrl": ".",
+       "paths": {
+           "*": ["node_modules/*"],
+           "src/*": ["./src/*"]
+       }
+    },
+    "ts-node": {
+        "transpileOnly": true
+    }
+}
