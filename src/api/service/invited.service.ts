@@ -69,7 +69,7 @@ async function memberClubService(data: any) {
       );
       // const getUserList = getUser?.filter((data) => data?.USER_ID === getType?.USER_ID && getType?.TYPE !== UserType.PLAYER);
       let userInfo = (await axios.post(
-        `http://3.6.41.207/friend/list-user-details`,
+        `http://192.168.1.46:3003/friend/list-user-details`,
         {
           userId: getUserList.toString(),
         },
@@ -154,7 +154,7 @@ async function memberClubService(data: any) {
         getType?.USER_ID,
       ];
       let userInfo = (await axios.post(
-        `http://3.6.41.207/friend/list-user-details`,
+        `http://192.168.1.46:3003/friend/list-user-details`,
         {
           userId: getUserList.toString(),
         },
@@ -195,7 +195,7 @@ async function memberClubService(data: any) {
       const getUser = await getUserDetailClub(query);
       const getUserList = getUser?.map((data) => data.USER_ID);
       let userInfo = (await axios.post(
-        `http://3.6.41.207/friend/list-user-details`,
+        `http://192.168.1.46:3003/friend/list-user-details`,
         {
           userId: getUserList.toString(),
         },
@@ -251,7 +251,7 @@ async function inviteNewPlayerService(data: any) {
     });
     const getUser = await getUserDetailClub(query);
     let friendList = (await axios.get(
-      `http://3.6.41.207/friend/my-friend-list/${data?.USER_ID}`,
+      `http://192.168.1.46:3003/friend/my-friend-list/${data?.USER_ID}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -368,7 +368,7 @@ async function searchInvitedClubService(data: any) {
     const getCurrentUserId = getCurrentUser?.map((data) => data.USER_ID);
     console.log(`getCurrentUserId :::: `, getCurrentUserId);
     let friendList = (await axios.post(
-      `http://3.6.41.207/friend/search-invite-club-user`,
+      `http://192.168.1.46:3003/friend/search-invite-club-user`,
       {
         userId: getCurrentUser?.map((data) => data.USER_ID),
         name_id: data?.name_id,
