@@ -1,0 +1,1 @@
+{"version":3,"file":"disconnect.js","sourceRoot":"","sources":["../../../src/socket/main/disconnect.ts"],"names":[],"mappings":";;;;;;;;;;;;AAGA,SAAe,UAAU,CAAC,EAAO,EAAE,MAAc;;;QAC7C,IAAI;SAEH;QAAC,OAAO,KAAK,EAAE;YACZ,MAAM,CAAC,IAAI,CAAC,mBAAmB,EAAE,EAAE,MAAM,EAAE,KAAK,EAAE,OAAO,EAAE,MAAA,KAAK,aAAL,KAAK,uBAAL,KAAK,CAAE,OAAO,mCAAI,gBAAgB,EAAE,CAAC,CAAC;SACpG;;CACJ;AAEQ,gCAAU"}

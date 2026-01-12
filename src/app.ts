@@ -11,6 +11,7 @@ export async function createApp(): Promise<express.Application> {
 
     app.use(cors());
 
+    app.set('env', process.env.NODE_ENV || 'production');
     app.set('port', process.env.PORT);
 
     app.use(express.json({ limit: '10mb', type: 'application/json' }));
