@@ -35,7 +35,10 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        tar -czf deploy.tar.gz build/ package.json package-lock.json
+        FILES="build/ package.json package-lock.json"
+        [ -f .env ] && FILES="$FILES .env"
+        [ -f .env.production ] && FILES="$FILES .env.production"
+        tar -czf deploy.tar.gz $FILES
         scp -i ~/.ssh/ec2_key.pem deploy.tar.gz ec2-user@${{ secrets.EC2_GATEWAY_HOST }}:~/app/
 
     - name: Deploy on EC2
