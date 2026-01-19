@@ -21,7 +21,7 @@ async function createTableService(data: any) {
         }
         const setData = {
             DESIGN_TYPE: data?.DESIGN_TYPE,
-            NO_OF_PLAYER: data?.NO_OF_PLAYER,
+            NO_OF_PLAYER: 2, // Force 2 players only
             TURN_TIME: data?.TURN_TIME,
             NAME: data?.NAME,
             ENTRY_FEES: data?.ENTRY_FEES,
@@ -51,15 +51,9 @@ async function createTableService(data: any) {
 async function getTableListService(data: any) {
     try {
         const { clubId, USER_ID, tableNumber, isRunningTable } = data;
-        const query = !!tableNumber ? {
+        const query = {
             where: {
-                NO_OF_PLAYER: parseInt(tableNumber),
-                IN_RUNNING_TABLE: isRunningTable,
-                CLUB_ID: clubId
-            },
-            relations: ['CLUB_ID']
-        } : {
-            where: {
+                NO_OF_PLAYER: 2, // Always filter for 2-player tables only
                 IN_RUNNING_TABLE: isRunningTable,
                 CLUB_ID: clubId
             },

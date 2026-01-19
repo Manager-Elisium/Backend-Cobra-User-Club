@@ -10,13 +10,14 @@ async function createTable(req: Request, res: Response, next: NextFunction) {
         let decryptBody: any = await decrypt({ public_key, content }, secretKey);
         const {
             DESIGN_TYPE,
-            NO_OF_PLAYER,
+            // NO_OF_PLAYER, // Removed - we'll hardcode it to 2
             TURN_TIME,
             NAME,
             ENTRY_FEES,
             RAKE,
             IN_GAME_INTERACTIONS,
             CLUB_ID, TABLE_ID } = JSON.parse(decryptBody);
+        const NO_OF_PLAYER = 2; // Force 2 players only
         let createTable = await createTableService({
             NAME, DESIGN_TYPE,
             NO_OF_PLAYER,
